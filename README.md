@@ -315,6 +315,7 @@ Replace the Payment Button with the add to cart Button like below;
 ```
 </br>
 Navigate to navbar component and add the below code to your navbar to show the cart with a badge showing the number of items in your badge;
+
 ```jsx
   <li className="nav-item px-2">
     <Link to="/cart" className="nav-link position-relative">
@@ -328,7 +329,6 @@ Navigate to navbar component and add the below code to your navbar to show the c
     </Link>
   </li>
 ```
-</br>
 
 Add a useContext hook to handle cartItemCount and import Cartcontext;
 ```jsx
