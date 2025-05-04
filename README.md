@@ -70,7 +70,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
-## To add the cart functionality;
+## <h1>To add the cart functionality;</h1>
 
 ### <h2>Step One</h2>
 
@@ -313,5 +313,31 @@ Replace the Payment Button with the add to cart Button like below;
     Add to Cart
   </button>
 ```
+</br>
+Navigate to navbar component and add the below code to your navbar to show the cart with a badge showing the number of items in your badge..
+```jsx
+  <li className="nav-item px-2">
+    <Link to="/cart" className="nav-link position-relative">
+      Cart
+      {cartItemCount > 0 && (
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {cartItemCount}
+        </span>
+      )}
+      <div className="nav-underline"></div>
+    </Link>
+  </li>
+```
+</br>
 
+Add a useContext hook to handle cartItemCount and import Cartcontext;
+```jsx
+//cart hook
+  const { cartItemCount } = useContext(CartContext);
+
+```
+```jsx
+// import cart context
+import { CartContext } from '../contexts/CartContext';
+```
 

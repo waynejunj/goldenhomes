@@ -10,7 +10,7 @@ import { CartContext } from '../contexts/CartContext';
 
 const Navbar = () => {
 
-  //cart
+  //cart hook
   const { cartItemCount } = useContext(CartContext);
 
   useEffect(() => {
