@@ -1,11 +1,18 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect ,useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../../App.css';
 import './Navbar.css';
 
+// import cart context
+import { CartContext } from '../contexts/CartContext';
+
 const Navbar = () => {
+
+  //cart
+  const { cartItemCount } = useContext(CartContext);
+
   useEffect(() => {
     // Initialize Bootstrap's JS for the navbar
     const navbarToggler = document.querySelector('.navbar-toggler');
@@ -71,6 +78,21 @@ const Navbar = () => {
                 <div className="nav-underline"></div>
               </Link>
             </li>
+
+            {/* cart code */}
+            <li className="nav-item px-2">
+              <Link to="/cart" className="nav-link position-relative">
+                Cart
+                {cartItemCount > 0 && (
+                  <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {cartItemCount}
+                  </span>
+                )}
+                <div className="nav-underline"></div>
+              </Link>
+            </li>
+
+            {/* cart code*/}
           </ul>
           
           {/* Auth Buttons */}
@@ -85,7 +107,7 @@ const Navbar = () => {
               to="/signup" 
               className="btn btn-warning btn-sm mx-1"
             >
-              Register
+              Get Started
             </Link>
           </div>
         </div>

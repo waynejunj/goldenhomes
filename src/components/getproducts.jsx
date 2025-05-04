@@ -1,16 +1,20 @@
-import { useState, useEffect } from "react"; // for state management
+import { useState, useEffect , useContext } from "react"; // for state management
 import axios from "axios"; // For API Access
-import { useNavigate } from "react-router-dom"; // For link to other component
 import Footer from "./footer";
 import Carousel from "./Carousel/carousel";
 
+//import cart context
+import { CartContext } from './contexts/CartContext';
+
 const Getproducts = () => {
+
+    // cart hook
+    const { addToCart } = useContext(CartContext);
 
     // Initialize Hooks
     const [products, setProducts] = useState([]);  // Default to empty array instead of a string
     const [loading, setLoading] = useState(""); // For loading message
     const [error, setError] = useState(""); // error message hook
-    const navigate = useNavigate()
 
     
     // Specify image location URL
@@ -92,12 +96,19 @@ const Getproducts = () => {
                     <span className="text-dark">KES</span> {product.product_cost}
                   </b>
                 </div>
-                <button 
+                {/* <button 
                   className="btn btn-info mt-2 w-100"
                   onClick={() => navigate("/makepayment", {state: {product}})}
                 >
                   Buy Now!
-                </button>
+                </button> */}
+
+                <button 
+                    className="btn btn-success"
+                    onClick={() => addToCart(product)}
+                  >
+                    Add to Cart
+                  </button>
               </div>
             </div>
           </div>
