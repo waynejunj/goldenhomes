@@ -133,7 +133,7 @@ Craete a contexts folder inside the components folder then create a file named C
 ### <h2>Step Two</h2>
 Create a Cart Component and add the below code ;
 
-<img src="./public/cartcomponent.png" alt="Alt text" width="700"/>
+<img src="./public/cartcomponent.png" alt="Alt text"/>
 
 ```jsx
 
