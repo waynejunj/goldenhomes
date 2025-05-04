@@ -74,7 +74,7 @@ To add the cart functionality;
 
 ### <h2>Step One</h2>
 
-Craete a contexts folder inside the components folder then create a file named CartContext.jsx and add the code below;
+Craete a contexts folder inside the components folder then create a file named `CartContext.jsx` and add the code below;
 
 ```jsx
         import { createContext, useState, useEffect } from 'react';
