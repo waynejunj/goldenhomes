@@ -74,7 +74,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### <h2>Step One</h2>
 
-Craete a contexts folder inside the components folder then create a file named `CartContext.jsx` and add the code below;
+Craete a contexts folder inside the components folder then create a file named **`CartContext.jsx`** and add the code below;
 
 ```jsx
         import { createContext, useState, useEffect } from 'react';
@@ -134,6 +134,7 @@ Craete a contexts folder inside the components folder then create a file named `
 Create a Cart Component and add the below code ;
 
 <img src="./public/cartcomponent.png" alt="Alt text"/>
+</br>
 
 ```jsx
 
@@ -298,7 +299,7 @@ Navigate to the getproducts component and add a hook to handle the cart context 
 ```jsx
 const { addToCart } = useContext(CartContext);
 ```
-And do not forget to import the CartContext
+Do not forget to import the CartContext
 ```jsx
 import { CartContext } from './contexts/CartContext';
 ```
